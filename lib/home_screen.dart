@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_eleven/video_player_view_container.dart';
 
 import 'map_view_container.dart';
 import 'my_web_view.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               child: const Text("Open Webpage"),
@@ -30,10 +32,18 @@ class HomePage extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text("Go for Map"),
+              child: const Text("Go to map"),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const MapViewContainer(),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              child: const Text("Go to video"),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const VideoPlayerViewContainer(),
                 ),
               ),
             ),
